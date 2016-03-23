@@ -1,33 +1,32 @@
-<div class="abrir-menu icon-menu espacio"></div> 
-<div id="search2" class="buscar2 icon-buscar espacio"></div>
+<div class="abrir-menu">
+  <span class="abrir-menu__linea1 abrir-menu__linea-item"></span>
+  <span class="abrir-menu__linea2 abrir-menu__linea-item"></span>
+  <span class="abrir-menu__linea3 abrir-menu__linea-item"></span>
+  <span class="abrir-menu__text">Menu</span>
+</div>
+{{#if @blog.logo}}<a class="icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="icono-web" /></a>{{/if}}
 
-<form class="form-search animated zoomIn">
-  <div class="cerrar-search icon-cerrar animated retraso1 flipInX"></div> 
-  <input id="search-field" placeholder="Buscar..." autocomplete="off" class="base-70 movil-60 tablet-50 web-45 animated retraso1 fadeIn" />
-
+<form class="form-search">
+  <span class="cerrar-search icon-cerrar"></span> 
+  <input id="search-field" placeholder="Buscar..." autocomplete="off" class="base-70 movil-60 tablet-50 web-45" />
   <section id="results" class="base-70 movil-60 tablet-50 web-45"></section> 
 </form>  
 
-
-<div class="menu-content web-justificar web-cross-center">
-  {{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="icono" /></a>{{/if}}
-
-  <ul class="menu web-justificar">
+<div class="menu-content columna justificar">
+  <ul class="menu">
+    {{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="menu__icono" /></a>{{/if}}
+    <div id="search" class="menu__link icon-buscar buscar"></div>
     {{#foreach navigation}}
-        <li class="menu__item" role="presentation"><a href="{{url absolute="true"}}" class="menu__link">{{label}}</a></li>
+    <li class="menu__item" role="presentation"><a href="{{url absolute="true"}}" class="menu__link">{{label}}</a></li>
     {{/foreach}}
-    <div id="search" class="buscar icon-buscar espacio"></div>
   </ul>
   
   <div class="social-menu">
-    <div class="social-menu1">
-      <a href="https://twitter.com/Diegoztag" target="_blank" class="social-menu1__item icon-twitter twi"></a>
-      <a href="#" target="_blank"  class="social-menu1__item icon-facebook face"></a>
-    </div>
-    <div class="social-menu2">
-      <a href="https://www.linkedin.com/in/diegozazueta" target="_blank" class="social-menu2__item icon-linkedin link"></a>
-      <a href="https://github.com/Diegoztag" target="_blank" class="social-menu2__item icon-github git"></a>
-    </div>
-    <a class="subscribe-button icon-rss espacio" href="{{@blog.url}}/rss/">Suscribir</a>
+      <a href="https://twitter.com/Diegoztag" target="_blank" class="social-menu__item icon-twitter"></a>
+      <a href="https://www.facebook.com/diegoztag" target="_blank"  class="social-menu__item icon-facebook"></a>
+      <a href="https://www.linkedin.com/in/diegozazueta" target="_blank" class="social-menu__item icon-linkedin"></a>
+      <a href="https://github.com/Diegoztag" target="_blank" class="social-menu__item icon-github"></a>
+
+      <a class="subscribe-button icon-rss espacio" href="{{@blog.url}}/rss/">Suscribir</a>
   </div>
 </div>

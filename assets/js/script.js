@@ -1,63 +1,88 @@
 //:::::::::::::::::::Scripts para mobile::::::::::::::::::::::
 
-//Script para mostrar el menu mobile
-$(document).ready(function() {
-
-	$('.abrir-menu').on('click',function(e){
-		e.preventDefault();
-
-		$('.abrir-menu').css('visibility','hidden');
-
-		var abrirMenu = $('.menu-content');
-		var menuAncho = $('.menu-content').width();
-		
-			abrirMenu.animate({
-					left: 0
-			});
-		
-	$(abrirMenu).on('mouseleave',function(e){
-		e.preventDefault();
-
-		$('.abrir-menu').css('visibility','visible');
-
-			abrirMenu.animate({
-				left: -250
-			});
-		});	
-	});
-});
-
 //:::::::::::::::::::Scripts para web::::::::::::::::::::::
 
-//Script para menu-fixed
-$(document).ready(function() {
-
-	$(window).on('scroll',function(){
-		if ($(window).scrollTop() < $(window).height()) {
-			$('.menu-content').removeClass('menu-fixed');
-		}else{
-			$('.menu-content').addClass('menu-fixed');
-		}		
-	});
-});
-
 //:::::::::::::::::::Scripts generales::::::::::::::::::::::
-
-//Script para recargar al saltar mediaquery--------------------------------
-$(document).ready(function() {
-	var mobile = matchMedia('only screen and (max-width: 1023px)');
-
-	mobile.addListener(function(mql) {
-		window.location.reload(); 
-	});
-});
 
 //Script del loader--------------------------------------------------------
 $(window).load(function(){
 	setTimeout(function() {
 		$(".loader").fadeOut(1000,function(){});	
-	},1000);
+	});
 }); 
+
+//Script del menu--------------------------------------------------------
+$(document).ready(function() {
+
+	var abrirMenu = $('.menu-content');
+	var wrap = $('.wrap');
+	var header = $('.header-content');
+	var icono = $('.icono-web');
+	var mainContent = $('.main-content');
+	var menuWidth = $('.menu-content').width();
+	var flag = 1;
+
+	$('.abrir-menu').on('click',function () {
+		mainContent.animate({opacity: 0.8},200);
+		if (flag == 1) {
+			abrirMenu.animate({right: 0},300);
+			wrap.animate({right: menuWidth},300);
+			header.animate({right: menuWidth},300);
+			icono.animate({right: menuWidth},300);
+
+			$('.abrir-menu__linea2').animate({opacity :0})
+			$('.abrir-menu__linea1').animate({borderSpacing: -47 },{step: function(now,fx) {
+			      $(this).css({'transform':'rotate('+now+'deg)','top':'12px','left':'13px','width':'20px'});},duration:'fast'},'linear');
+			$('.abrir-menu__linea3').animate({borderSpacing: 47 },{step: function(now,fx) {
+			      $(this).css({'transform':'rotate('+now+'deg)','top':'12px','left':'13px','width':'20px'});},duration:'fast'},'linear');
+			$('.abrir-menu__text').text('Cerrar');
+			$('.header-content').css({'transition': 'initial'});
+
+			flag = flag + 1;
+		}else{
+			mainContent.animate({opacity: 1},200);
+			abrirMenu.animate({right: - menuWidth},300);
+			wrap.animate({right: 0},300);
+			header.animate({right: 0},300);
+			icono.animate({right: 0},300);
+
+			$('.abrir-menu__linea2').animate({opacity :1})
+			$('.abrir-menu__linea1').animate({borderSpacing: 0 },{step: function(now,fx) {
+			      $(this).css({'transform':'rotate('+now+'deg)','top':'6px','left':'15px','width':'22px'});},duration:'slow'},'linear');
+			$('.abrir-menu__linea3').css({'transform':'rotate('+ 0+'deg)','top':'18px','left':'15px','width':'22px'});
+			$('.abrir-menu__text').text('Menu');
+
+			flag = 1;
+		}	
+	});
+});
+
+//Script para menu-fixed------------------------------------------------------
+$(document).ready(function() {
+
+	$(window).on('scroll',function(){
+		if ($(window).scrollTop() < ($(window).height()) - $('#header').height()) {
+			$('.header-false').slideUp(300);
+		}else{
+			$('.header-false').slideDown(300);
+		}		
+	});
+});
+
+$(document).ready(function() {
+
+	var verficapantalla = window.matchMedia("(min-width: 768px)");
+	if (verficapantalla.matches) {
+		$(window).on('scroll',function(){
+
+			if ($(window).scrollTop() < ($(window).height()) - $('#header').height()) {
+				$('.header-content').css({'top':0,'transition': 'all 200ms linear'});
+			}else{
+				$('.header-content').css({'top':-41,'transition': 'all 200ms linear'});
+			}		
+		});
+	}
+});
 
 //Script del slider-------------------------------------------------------
 $(document).ready(function() {
@@ -104,9 +129,7 @@ $(document).ready(function() {
 
 //Script para ventana modal----------------------------------------------
 $(document).ready(function() {
-	$("#search,#search2").on("click",function() {
-
-		$('.buscar,.buscar2').css('visibility','hidden');
+	$("#search").on("click",function() {
 
 		$(".form-search").each(function() {
 			displaying = $(this).css("display");
@@ -119,8 +142,6 @@ $(document).ready(function() {
 	});
 
 	$(".cerrar-search").on("click",function() {
-
-		$('.buscar,.buscar2').css('visibility','visible');
 
 		$(".form-search").each(function() {
 		displaying = $(this).css("display");
