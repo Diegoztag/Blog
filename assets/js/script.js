@@ -61,7 +61,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 
 	$(window).on('scroll',function(){
-		if ($(window).scrollTop() < ($(window).height()) - $('#header').height()) {
+		if ($(window).scrollTop() < ($(window).height()||$('.post-head').height()) - $('#header').height()) {
 			$('.header-false').slideUp(300);
 		}else{
 			$('.header-false').slideDown(300);
@@ -221,7 +221,7 @@ $(function(){
 
 //Script animaciones scroll------------------------------------------------
 $(document).ready(function  () {
-	window.sr = ScrollReveal({ reset: true });
+	window.sr = ScrollReveal({ reset: false, mobile: false });
 
 	// Customizing a reveal set
 	sr.reveal('.sobremi__content',{delay:600,distance:'90px',easing:'ease-in-out'},400);
