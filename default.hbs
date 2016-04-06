@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	{{! Document Settings }}
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	{{! Page Meta }}
 	<title>{{meta_title}}</title>
 	<meta name="description" content="{{meta_description}}" />
 
@@ -14,100 +12,44 @@
 
 	<link rel="shortcut icon" href="{{asset "img/favicon.ico"}}">
 
-	{{! Styles'n'Scripts }}
 	<link rel="stylesheet" type="text/css" href="{{asset "css/zurix.css"}}" />
-	<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset "css/magnific-popup.css"}}" />
-
-	{{! Ghost outputs important style and meta data with this tag }}
-	{{ghost_head}}
 </head>
-<body class="{{body_class}} nav-closed">
 
-	{{> loader}}
-
-	<div class="site-wrapper wrap">
-
-		<header id="header">
-			<div class="header-content">
-				{{navigation}}
-			</div>
-			<div class="header-false"></div>
-		</header>
-
-		<div class="main-content">
-
-
-			{{! Everything else gets inserted here }}
-			{{{body}}}
-			
-			<footer id="footer">
-				<div class="papa footer">
-					<div class="hijo footer__hijo fila centro web-90">
-						<div class="footer__block tablet-1-3 footer__block-uno">
-							<p class="footer__text">
-								<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
-							</p>
-							<p class="footer__text">
-								Desarrollador Web, Frontend y Backend en Tecnologías JavaScript: Vanilla, JQuery, AngularJS, NodeJS, HTML, CSS. Formador Web y Blogger.
-							</p>
-							<p class="footer__text icon-pin espacio">Culiacán, Sinaloa, México</p>
-							<div class="footer__btn btn-email icon-correo">
-								<a href="mailto:diegoztag@gmail.com" class="footer__btn-link">E-mail</a>
-							</div>
-						</div>
-
-						<div class="footer__block tablet-1-3 footer__block-dos">
-							<ul class="footer__ul column justificar">
-								<li class="footer__link"><a href="#">Blog</a></li>
-								<li class="footer__link"><a href="#">Sobre mi</a></li>
-								<li class="footer__link"><a href="#">Portafolio</a></li>
-								<li class="footer__link"><a href="#">Currículum</a></li>
-								<li class="footer__link"><a href="#">Aviso legal</a></li>
-							</ul>
-						</div>
-
-						<div class="footer__block tablet-1-3 footer__block-tres column">
-							<p class="footer__titulo">Noticias</p>
-							<p class="footer__subtitulo">
-								¿Te gusta lo que lees? <br> Unete al lado obscuro, Suscribete!!
-							</p>
-							<form class="footer__form column" action="" method="post">
-								<div class="footer__formulario">
-									<label class="footer__label" for="nombre">Nombre*</label> <br>
-									<input class="footer__inp" type="text" name="nombre" id="" required="true">
-								</div>
-							
-								<div class="footer__formulario">
-									<label class="footer__label" for="email">Email*</label> <br>
-									<input class="footer__inp" type="email" name="email" id="" required="true">   
-								</div>
-
-								<button class="footer__form-btn" type="submit">Suscribir <span class="icon-rss"></span></button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</footer>
+	<body>
 		
+		{{!-- Loader animación al cargar pagina --}}
+		{{>loader}}
+		
+		{{!-- Container general de la pagina --}}
+		<div class="wrap">
+
+			{{!-- Menu --}}
+			{{navigation}}
+			
+			{{!-- Container del contenido --}}
+			<div class="main-content">
+
+				{{!-- Contenido main de la pagina index --}}
+				{{{body}}}
+						
+				{{!-- Footer general de la pagina y blog --}}
+				{{>footer}}
+
+				{{!-- Botón ir arriba --}}
+				<div id="btn-subir" class="btn-top centro"><p class="subir icon-arriba"></p></div>
+			</div>
+
 		</div>
-
-	</div>
- 
+		
+		{{!-- Scripts --}}
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-
-		{{ghost_foot}}
-
-		<script type="text/javascript" src="{{asset "js/owl.carousel.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.ghostHunter.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.magnific-popup.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.mixitup.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/scrollreveal.min.js"}}"></script>
-
 		<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
-
-		<div id="btn-subir" class="btn-top centro"><p class="subir icon-arriba"></p></div>
-</body>
+	</body>
 </html>
-
+ 
 

@@ -1,4 +1,22 @@
 {
-  "name": "Blog",
-  "version": "1.0.0"
+  "name": "blog",
+  "version": "1.1.2",
+  "description": "Tema a medida para website y blog personal desarrollado para el CMS Ghost desarrollado en HTML con Handelbars, CSS y Javascript.",
+  "main": "index.hbs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diegoztag/Blog.git"
+  },
+  "keywords": [
+    "Blog",
+    "Ghost",
+    "Node",
+    "Handlebars"
+  ],
+  "author": "Diego Zazueta <Diegoztag@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diegoztag/Blog/issues"
+  },
+  "homepage": "https://github.com/Diegoztag/Blog#readme"
 }

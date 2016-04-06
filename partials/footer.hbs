@@ -1,0 +1,49 @@
+
+<footer id="footer">
+	<div class="papa footer">
+		<div class="hijo footer__hijo fila centro web-90">
+			<div class="footer__block tablet-1-3 footer__block-uno">
+				<p class="footer__text">
+					<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+				</p>
+				<p class="footer__text">
+					Desarrollador Web, Frontend y Backend en Tecnologías JavaScript: Vanilla, JQuery, AngularJS, NodeJS, HTML, CSS. Formador Web y Blogger.
+				</p>
+				<p class="footer__text icon-pin espacio">Culiacán, Sinaloa, México</p>
+				<div class="footer__btn btn-email icon-correo">
+					<a href="mailto:diegoztag@gmail.com" class="footer__btn-link">E-mail</a>
+				</div>
+			</div>
+
+			<div class="footer__block tablet-1-3 footer__block-dos">
+				<ul class="footer__ul column justificar">
+					<li class="footer__link"><a href="#">Blog</a></li>
+					<li class="footer__link"><a href="#">Sobre mi</a></li>
+					<li class="footer__link"><a href="#">Portafolio</a></li>
+					<li class="footer__link"><a href="#">Currículum</a></li>
+					<li class="footer__link"><a href="#">Aviso legal</a></li>
+				</ul>
+			</div>
+
+			<div class="footer__block tablet-1-3 footer__block-tres column">
+				<p class="footer__titulo">Noticias</p>
+				<p class="footer__subtitulo footer__text">
+					¿Te gusta lo que lees? <br> Unete al lado obscuro, Suscribete!!
+				</p>
+				<form class="footer__form column" action="" method="post">
+					<div class="footer__formulario">
+						<label class="footer__text" for="nombre">Nombre*</label> <br>
+						<input class="footer__inp" type="text" name="nombre" id="" required="true">
+					</div>
+				
+					<div class="footer__formulario">
+						<label class="footer__text" for="email">Email*</label> <br>
+						<input class="footer__inp" type="email" name="email" id="" required="true">   
+					</div>
+
+					<button class="footer__form-btn" type="submit"><span class="icon-rss"></span> Suscribir</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</footer>
