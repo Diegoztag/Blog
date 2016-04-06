@@ -22,7 +22,7 @@ $(document).ready(function() {
 	var flag = 1;
 
 	$('.abrir-menu').on('click',function () {
-		mainContent.animate({opacity: 0.7},200);
+		mainContent.animate({opacity: 0.9},200);
 		if (flag == 1) {
 			abrirMenu.animate({right: 0},300);
 			menuWrap.animate({right: menuWidth},300);

@@ -1,6 +1,6 @@
 
 
-# Diego Zazueta Blog 1.1.2
+# Diego Zazueta --Blog 1.1.3--
 
 ## Ghost 0.7.6
 
