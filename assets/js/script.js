@@ -56,8 +56,28 @@ $(document).ready(function() {
 	});
 });
 
+// Script para el indicador del chat----------------------------------------
+$(document).ready(function () {
+
+	var flag = 1;
+
+	$('.menu__chat').on('click',function () {
+		if (flag == 1) {
+			$('.menu__chat').addClass('chat-active');
+			flag = flag + 1;
+		}else{
+			$('.menu__chat').removeClass('chat-active');
+			flag = 1;
+		}
+	});
+});
+
 //Script para desplazamiento del menu en diferentes sections-----------------
 $(document).ready(function () {
+	$('.btn-circulo').on('click',function () {
+		$('html,body').animate({scrollTop: $(".wrap-post").offset().top}, 1000);
+	});
+
 	$('.menu__porta').on('click',function () {
 		$('html,body').animate({scrollTop: $(".porta").offset().top}, 1000);
 	});
@@ -68,33 +88,6 @@ $(document).ready(function () {
 });
 
 //Script para menu-fixed------------------------------------------------------
-// $(document).ready(function() {
-
-// 	$(window).on('scroll',function(){
-
-// 		var verficapantalla = window.matchMedia("(min-width: 768px)");
-// 		var altoMenuFix = $('.menu-wrap').height();
-// 		var altoHeader = $('header').height();
-
-// 		if ($(window).scrollTop() < (altoHeader - altoMenuFix)) {
-// 			$('.menu-wrap__false').slideUp(300);
-// 		}else{
-// 			$('.menu-wrap__false').slideDown(300);
-// 		}
-
-// 		if (verficapantalla.matches) {
-// 			$(window).on('scroll',function(){
-
-// 				if ($(window).scrollTop() < (altoHeader - altoMenuFix)){
-// 					$('.menu-wrap__content').css({'top':0,'transition': 'all 200ms linear'});
-// 				}else{
-// 					$('.menu-wrap__content').css({'top':-41,'transition': 'all 200ms linear'});
-// 				}		
-// 			});
-// 		}		
-// 	});
-// });
-// 
 $(document).ready(function() {
 
 	$(window).on('scroll',function(){
