@@ -1,44 +1,59 @@
-<div class="menu-wrap">
-  <div class="menu-wrap__content">
+{{!-- efecto oscurecer --}}
+<div class="site-overlay"></div>
 
-    {{#if @blog.logo}}<a class="icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="icono-web" /></a>{{/if}}
-    
-    <div class="abrir-menu">
-      <span class="abrir-menu__linea1 abrir-menu__linea-item"></span>
-      <span class="abrir-menu__linea2 abrir-menu__linea-item"></span>
-      <span class="abrir-menu__linea3 abrir-menu__linea-item"></span>
-      <span class="abrir-menu__text">Menu</span>
-    </div>
+{{!-- imput de busqueda --}}
+<form class="form-search">
+  <span class="cerrar-search icon-cerrar"></span> 
+  <input id="search-field" placeholder="Buscar..." autocomplete="off" class="base-70 movil-60 tablet-65 web-45" />
+  <section id="results" class="base-70 movil-70 tablet-50 web-45"></section> 
+</form>
 
-    <form class="form-search">
-      <span class="cerrar-search icon-cerrar"></span> 
-      <input id="search-field" placeholder="Buscar..." autocomplete="off" class="base-70 movil-60 tablet-65 web-45" />
-      <section id="results" class="base-70 movil-70 tablet-50 web-45"></section> 
-    </form>  
+{{!-- menu estatico --}}
+<nav class="menu1 justificar cross-center base-90 movil-85 centro push">
 
-    <div class="menu-content columna justificar">
-      <ul class="menu">
-        {{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="menu__icono" /></a>{{/if}}
-        <div class="papa row opciones">
-          <div class="hijo menu__link icon-chat base-50 menu__opcion menu__chat"></div>
-          <div id="search" class="hijo menu__link icon-buscar menu__buscar base-50 menu__opcion"></div>
-        </div>
-        {{#foreach navigation}}
-        <li class="menu__item" role="presentation"><a href="{{url absolute="true"}}" class="menu__link">{{label}}</a></li>
-        {{/foreach}}
-        <li class="menu__item menu__link menu__porta">Portafolio</li>
-        <li class="menu__item menu__link menu__contacto">Contacto</li>
-      </ul>
+  {{#if @blog.logo}}<a class="menu1__icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
   
-      <div class="social-menu">
-        <a href="https://twitter.com/Diegoztag" target="_blank" class="social-menu__item icon-twitter"></a>
-        <a href="https://www.facebook.com/diegoztag" target="_blank"  class="social-menu__item icon-facebook"></a>
-        <a href="https://www.linkedin.com/in/diegozazueta" target="_blank" class="social-menu__item icon-linkedin"></a>
-        <a href="https://github.com/Diegoztag" target="_blank" class="social-menu__item icon-github"></a>
-        <a class="subscribe-button icon-rss espacio" href="{{@blog.url}}/rss/">Suscribir</a>
-      </div>
-    </div> 
-
+  <div class="abrir-menu menu-btn column justificar">
+    <span class="abrir-menu__linea1 abrir-menu__linea-item"></span>
+    <span class="abrir-menu__linea2 abrir-menu__linea-item"></span>
+    <span class="abrir-menu__linea3 abrir-menu__linea-item"></span>
   </div>
-</div>
-<div class="menu-wrap__false"></div>
+
+</nav>
+
+{{!-- menu fixed --}}
+<nav class="menu-fix justificar cross-center push">
+
+  {{#if @blog.logo}}<a class="menu-fix__icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+  
+  <div class="abrir-menu menu-btn column justificar">
+    <span class="abrir-menu__linea1 abrir-menu__linea-item"></span>
+    <span class="abrir-menu__linea2 abrir-menu__linea-item"></span>
+    <span class="abrir-menu__linea3 abrir-menu__linea-item"></span>
+    <span class="abrir-menu__text">Menu</span>
+  </div>
+</nav>
+
+{{!-- menu oculto --}}
+<nav class="menu-content columna justificar pushy pushy-right">
+  <ul class="menu">
+    {{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="menu__icono" /></a>{{/if}}
+    <div class="papa row opciones">
+      <div class="hijo menu__link icon-chat base-50 menu__opcion menu__chat"></div>
+      <div id="search" class="hijo menu__link icon-buscar menu__buscar base-50 menu__opcion"></div>
+    </div>
+    {{#foreach navigation}}
+    <li class="menu__item" role="presentation"><a href="{{url absolute="true"}}" class="menu__link">{{label}}</a></li>
+    {{/foreach}}
+    <li class="menu__item menu__link menu__porta">Blog</li>
+    <li class="menu__item menu__link menu__contacto">Contacto</li>
+  </ul>
+
+  <div class="social-menu">
+    <a href="https://twitter.com/Diegoztag" target="_blank" class="social-menu__item icon-twitter"></a>
+    <a href="https://www.facebook.com/diegoztag" target="_blank"  class="social-menu__item icon-facebook"></a>
+    <a href="https://www.linkedin.com/in/diegozazueta" target="_blank" class="social-menu__item icon-linkedin"></a>
+    <a href="https://github.com/Diegoztag" target="_blank" class="social-menu__item icon-github"></a>
+    <a class="subscribe-button icon-rss espacio" href="{{@blog.url}}/rss/">Suscribir</a>
+  </div>
+</nav>

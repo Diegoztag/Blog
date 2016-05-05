@@ -4,9 +4,9 @@
 <article class="post-main web-60">
 
     <header class="post-header">
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        <time class="post-date fecha" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
         <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-        <div class="papa centrar post-meta no-padding post-meta__item">
+        <div class="papa centrar post-meta no-padding post-meta__item info">
             {{#author}}
             <div class="post-meta__item">
                 <i class="icon-usuario"></i>
@@ -20,13 +20,14 @@
                 
             <div class="post-meta__item">
                 <i class="icon-chat"></i>
-                <a href="">1 Comentario</a>
+                <a href="{{url}}#disqus_thread"></a>
             </div>
             
         </div>
+        <a href="{{url}}" class="ver-mas">ver más</a>
     </header>
 
-    <section class="post-excerpt">
+    <section class="post-excerpt abstract">
         <p>{{excerpt words="50"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
     </section>
 
