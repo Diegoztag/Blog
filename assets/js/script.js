@@ -34,7 +34,7 @@ $(document).ready(function () {
 
 //Script para desplazamiento del menu en diferentes sections-----------------
 $(document).ready(function () {
-	$('.abajo').on('click',function () {
+	$('.bajar').on('click',function () {
 		$('html,body').animate({scrollTop: $(".wrap-post").offset().top}, 1000);
 	});
 
@@ -53,11 +53,11 @@ $(document).ready(function() {
 	$(window).on('scroll',function(){
 
 		var verficapantalla = window.matchMedia("(min-width: 768px)");
-		var altoMenuFix = $('.menu-wrap').height();
 		var altoHeader = $('header').height();
 
-		if ($(window).scrollTop() < (altoHeader - altoMenuFix)) {
+		if ($(window).scrollTop() < (altoHeader - 20)) {
 			$('.menu-fix').slideUp(300);
+
 		}else{
 			$('.menu-fix').slideDown(300);
 			$('.menu-fix').css({display: 'flex'});
@@ -199,3 +199,5 @@ $(document).ready(function  () {
 	sr.reveal('.porta__galeria',{delay:500,easing:'ease-in'});
 	sr.reveal('.social__item',{delay: 700},400); 
 });
+
+

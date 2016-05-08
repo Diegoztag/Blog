@@ -4,16 +4,16 @@
 {{!-- imput de busqueda --}}
 <form class="form-search">
   <span class="cerrar-search icon-cerrar"></span> 
-  <input id="search-field" placeholder="Buscar..." autocomplete="off" class="base-70 movil-60 tablet-65 web-45" />
-  <section id="results" class="base-70 movil-70 tablet-50 web-45"></section> 
+  <input id="search-field" placeholder="Buscar..." autocomplete="off" class="mini-70 movil-60 tablet-65 web-45" />
+  <section id="results" class="mini-70 movil-70 tablet-50 web-45"></section> 
 </form>
 
 {{!-- menu estatico --}}
-<nav class="menu1 justificar cross-center base-90 movil-85 centro push">
+<nav class="menu1 justificar medio centro mini-90 movil-85 push">
 
   {{#if @blog.logo}}<a class="menu1__icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
   
-  <div class="abrir-menu menu-btn column justificar">
+  <div class="abrir-menu menu-btn col justificar">
     <span class="abrir-menu__linea1 abrir-menu__linea-item"></span>
     <span class="abrir-menu__linea2 abrir-menu__linea-item"></span>
     <span class="abrir-menu__linea3 abrir-menu__linea-item"></span>
@@ -22,25 +22,24 @@
 </nav>
 
 {{!-- menu fixed --}}
-<nav class="menu-fix justificar cross-center push">
+<nav class="menu-fix justificar medio push">
 
   {{#if @blog.logo}}<a class="menu-fix__icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
   
-  <div class="abrir-menu menu-btn column justificar">
+  <div class="abrir-menu menu-btn col justificar">
     <span class="abrir-menu__linea1 abrir-menu__linea-item"></span>
     <span class="abrir-menu__linea2 abrir-menu__linea-item"></span>
     <span class="abrir-menu__linea3 abrir-menu__linea-item"></span>
-    <span class="abrir-menu__text">Menu</span>
   </div>
 </nav>
 
 {{!-- menu oculto --}}
-<nav class="menu-content columna justificar pushy pushy-right">
+<nav class="menu-content col justificar pushy pushy-right">
   <ul class="menu">
     {{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="menu__icono" /></a>{{/if}}
-    <div class="papa row opciones">
-      <div class="hijo menu__link icon-chat base-50 menu__opcion menu__chat"></div>
-      <div id="search" class="hijo menu__link icon-buscar menu__buscar base-50 menu__opcion"></div>
+    <div class="papa opciones">
+      <div class="hijo menu__link icon-chat mini-50 menu__opcion menu__chat"></div>
+      <div id="search" class="hijo menu__link icon-buscar menu__buscar mini-50 menu__opcion"></div>
     </div>
     {{#foreach navigation}}
     <li class="menu__item" role="presentation"><a href="{{url absolute="true"}}" class="menu__link">{{label}}</a></li>
