@@ -4,36 +4,17 @@
 
 <header class="header-secundario {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
 
+    <div class="post-head centro mini-95 movil-80 web-75">
+        <time class="post-date date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+        <h2 class="">{{title}}</h2>
+    </div>
+
 </header>
 
 <main class="content" role="main">
     <article class="post-body">
 
-        <header class="post-header">
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-            <h2 class="post-title">{{title}}</h2>
-            <div class="papa centrar post-meta no-padding post-meta__item">
-            {{#author}}
-            <div class="post-meta__item">
-                <i class="icon-usuario"></i>
-                <a href="{{url}}">{{name}}</a>
-            </div>
-            {{/author}}
-
-            <div class="post-meta__item">
-                <i class="icon-tags"></i>
-                <a href="">{{tags prefix=""}}</a>
-            </div>
-                
-            <div class="post-meta__item">
-                <i class="icon-chat"></i>
-                <a href="{{url}}#disqus_thread"></a>
-            </div>
-            
-            </div>
-
-            <div class="addthis_sharing_toolbox"></div>
-        </header>
+        <div class="addthis_sharing_toolbox"></div>
 
         <section class="post-content post-excerpt">
             {{content}}

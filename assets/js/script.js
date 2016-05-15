@@ -15,7 +15,6 @@ $(document).ready(function(){
 		$('.abrir-menu').toggleClass('open');
 	});
 });
-
 // Script para el indicador del chat----------------------------------------
 $(document).ready(function () {
 
@@ -199,5 +198,26 @@ $(document).ready(function  () {
 	sr.reveal('.porta__galeria',{delay:500,easing:'ease-in'});
 	sr.reveal('.social__item',{delay: 700},400); 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

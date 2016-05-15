@@ -1,39 +1,41 @@
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
 
-<article class="post-main web-60">
+    <article class="post-main">
+        <div class="papa no-padding">
+            <div class="hijo">
+                <a href="{{url}}">
+                    <div class="post-img {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+                    </div>
+                </a>
+            </div>
 
-    <header class="post-header">
-        <time class="post-date fecha" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-        <div class="papa centrar post-meta no-padding post-meta__item info">
-            {{#author}}
-            <div class="post-meta__item">
-                <i class="icon-usuario"></i>
-                <a href="{{url}}">{{name}}</a>
-            </div>
-            {{/author}}
-            <div class="post-meta__item">
-                <i class="icon-tags"></i>
-                <a href="">{{tags prefix=""}}</a>
-            </div>
+            <div class="hijo">
+                <header class="post-header">    
+                    <h2 class="post-title">{{{title}}}</h2>
+                    {{#author}}
+                        <a class="icon-usuario autor centro" href="{{url}}"> {{name}}</a>
+                    {{/author}}
+                    <a href="{{url}}" class="ver-mas">ver más</a>  
+                </header>
+
+                <section class="post-excerpt abstract">
+                    <p>{{excerpt words="50"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+                </section>
+
+                <time class="post-date fecha etiqueta" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
                 
-            <div class="post-meta__item">
-                <i class="icon-chat"></i>
-                <a href="{{url}}#disqus_thread"></a>
+                <div class="etiqueta">
+                    <a class="icon-tags espacio" href=""> {{tags prefix=""}}</a>
+                </div>
+
             </div>
-            
         </div>
-        <a href="{{url}}" class="ver-mas">ver más</a>
-    </header>
+        
 
-    <section class="post-excerpt abstract">
-        <p>{{excerpt words="50"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
+        
 
-</article>
-<div class="post-img {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-</div>
+    </article>
 {{/foreach}}
 
 {{pagination}}
