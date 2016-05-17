@@ -3,9 +3,13 @@
 
 {{!-- imput de busqueda --}}
 <form class="form-search">
-  <span class="cerrar-search icon-cerrar"></span> 
-  <input id="search-field" placeholder="Buscar..." autocomplete="off" class="mini-70 movil-60 tablet-65 web-45" />
-  <section id="results" class="mini-70 movil-70 tablet-50 web-45"></section> 
+  <span class="cerrar-search icon-cerrar"></span>
+
+  <div class="resultados col medio">
+    <input id="search-field" placeholder="Buscar..." autocomplete="off" class="mini-70 movil-70 tablet-65 web-45" />
+    <section id="results" class="mini-70 movil-70 tablet-65 web-45"></section> 
+  </div>
+  
 </form>
 
 {{!-- menu estatico --}}
@@ -44,7 +48,6 @@
     {{#foreach navigation}}
     <li class="menu__item" role="presentation"><a href="{{url absolute="true"}}" class="menu__link">{{label}}</a></li>
     {{/foreach}}
-    <li class="menu__item menu__link menu__porta">Blog</li>
     <li class="menu__item menu__link menu__contacto">Contacto</li>
   </ul>
 
@@ -53,6 +56,6 @@
     <a href="https://www.facebook.com/diegoztag" target="_blank"  class="social-menu__item icon-facebook"></a>
     <a href="https://www.linkedin.com/in/diegozazueta" target="_blank" class="social-menu__item icon-linkedin"></a>
     <a href="https://github.com/Diegoztag" target="_blank" class="social-menu__item icon-github"></a>
-    <a class="subscribe-button icon-rss espacio" href="{{@blog.url}}/rss/">Suscribir</a>
+    <a class="subscribe-button icon-rss espacio" href="{{@blog.url}}/rss/"> Suscribir</a>
   </div>
 </nav>

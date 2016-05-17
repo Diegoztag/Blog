@@ -15,6 +15,7 @@ $(document).ready(function(){
 		$('.abrir-menu').toggleClass('open');
 	});
 });
+
 // Script para el indicador del chat----------------------------------------
 $(document).ready(function () {
 
@@ -76,26 +77,12 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#search").on("click",function() {
 
-		$(".form-search").each(function() {
-			displaying = $(this).css("display");
-			if (displaying == "none") {
-				$(this).fadeIn("fast",function () {
-					$(this).css("display","flex")
-				});
-			}		
-		})	
+		$(".form-search").fadeIn();
 	});
 
 	$(".cerrar-search").on("click",function() {
 
-		$(".form-search").each(function() {
-		displaying = $(this).css("display");
-		if (displaying == "flex") {
-				$(this).fadeOut("fast",function () {
-					$(this).css("display","none")
-				});
-			}		
-		})
+		$(".form-search").fadeOut();
 	});
 });
 
@@ -198,6 +185,16 @@ $(document).ready(function  () {
 	sr.reveal('.porta__galeria',{delay:500,easing:'ease-in'});
 	sr.reveal('.social__item',{delay: 700},400); 
 });
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,18 +1,35 @@
-{{! This is the post loop - each post will be output using this markup }}
+{{!-- seccion thumbnails --}}
 {{#foreach posts}}
-
+    
+    {{!-- cuerpo thumbnail --}}
     <article class="post-main">
-        <div class="papa no-padding">
-            <div class="hijo">
+
+            {{!-- seccion imagen-thumb --}}
+            <div class="imagen">
+
+                {{!-- imagen --}}
                 <a href="{{url}}">
                     <div class="post-img {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
                     </div>
                 </a>
-            </div>
 
-            <div class="hijo">
-                <header class="post-header">    
-                    <h2 class="post-title">{{{title}}}</h2>
+                {{!-- fecha --}}
+                <time class="post-date fecha etiqueta" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+
+                {{!-- tag --}}
+                <div class="etiqueta tag">
+                    <span class="icon-tags espacio" href=""> {{tags prefix=""}}</span>
+                </div>
+
+            </div>
+            
+            {{!-- seccion descripcion-thumb --}}
+            <div class="contenido">
+
+                <header class="post-header"> 
+                    <a href="{{url}}">
+                        <h2 class="post-title">{{{title}}}</h2>
+                    </a>   
                     {{#author}}
                         <a class="icon-usuario autor centro" href="{{url}}"> {{name}}</a>
                     {{/author}}
@@ -23,19 +40,13 @@
                     <p>{{excerpt words="50"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
                 </section>
 
-                <time class="post-date fecha etiqueta" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-                
-                <div class="etiqueta">
-                    <a class="icon-tags espacio" href=""> {{tags prefix=""}}</a>
-                </div>
-
             </div>
-        </div>
-        
 
-        
 
     </article>
+        
+
+    
 {{/foreach}}
 
 {{pagination}}

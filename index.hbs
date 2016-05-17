@@ -1,10 +1,10 @@
 {{!< default}}
 
-<header class="header-principal nofix {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+<header class="header-principal {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
 	{{> slider}}
 </header>
 
-<div class="wrap-post distribuir centro web-90">
+<div class="wrap-post distribuir centro">
 	{{> "loop"}}
 </div>
 
