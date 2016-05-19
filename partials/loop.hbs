@@ -33,21 +33,22 @@
                     {{#author}}
                         <a class="icon-usuario autor centro" href="{{url}}"> {{name}}</a>
                     {{/author}}
+                    <section class="post-excerpt abstract">
+                        <p>{{excerpt words="20"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+                    </section>
                     <a href="{{url}}" class="ver-mas">ver más</a>  
                 </header>
 
-                <section class="post-excerpt abstract">
-                    <p>{{excerpt words="50"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-                </section>
-
             </div>
 
-
     </article>
-        
-
     
 {{/foreach}}
+
+<div class="margen purgar mini-100">
+{{> suscribe}}
+    
+</div>
 
 {{pagination}}
 

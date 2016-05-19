@@ -4,67 +4,39 @@
 
 <header class="header-secundario {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
 
-    <div class="post-head centro mini-95 movil-80 web-75">
-        <time class="post-date date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        <h2 class="">{{title}}</h2>
-    </div>
-
 </header>
 
 <main class="content" role="main">
     <article class="post-body">
 
+        <div class="post-head">
+            <time class="post-date date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            <h2 class="">{{title}}</h2>
+        </div>
+
         <div class="addthis_sharing_toolbox"></div>
 
         <section class="post-content post-excerpt">
             {{content}}
+
+            <div class="btn-compartir">
+                <p>Si te gusto lo que leíste o te sirvió de algo, anímate a compartirlo para que otras personas puedan leerlo, quizás a ellas también les sirva! :D</p>
+                <div class="addthis_sharing_toolbox"></div>
+            </div>
         </section>
 
-        <div class="post-footer">
-
-            {{#author}}
-
-            {{#if image}}
-            <figure class="author-image">
-                <a class="img" href="{{url}}" style="background-image: url({{image}})"></a>
-            </figure>
-            {{/if}}
-
-            <section class="author">
-                <h4><a href="{{url}}">{{name}}</a></h4>
-
-                {{#if bio}}
-                    <p>{{bio}}</p>
-                {{else}}
-                    <p><a href="{{url}}">Revisa más de mis artículos</a></p>
-                {{/if}}
-                <div class="author-meta">
-                    {{#if location}}<span class="author-location post-location icon-mundo espacio">{{location}}</span>{{/if}}
-                    {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
-                </div>
-            </section>
-
-            {{/author}}
-
-            <section class="share">
-                <h4>Comparte este artículo</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                </a>
-            </section>
-            
-        </div>
-
-
-        <div id="disqus_thread"></div>
+        
 
     </article>
+    
+    <div class="wrap-post purgar distribuir centro">
+        {{> suscribe}}
+    </div>
+
+    <article class="post-body">
+        <div id="disqus_thread" class="centro"></div>
+    </article>
+
 
     
     <script>
