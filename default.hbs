@@ -8,23 +8,23 @@
 	<meta name="description" content="{{meta_description}}" />
 
 	<meta name="HandheldFriendly" content="True" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
 
 	<link rel="shortcut icon" href="{{asset "img/favicon.ico"}}">
 
 </head>
 
-	<body>
+	<body class="{{body_class}} nav-closed">
 		
 		{{!-- Loader animación al cargar pagina --}}
 		{{>loader}}
+
+		{{!-- Menu --}}
+		{{navigation}}
 		
 		{{!-- Container general de la pagina --}}
 		<div class="wrap">
 
-			{{!-- Menu --}}
-			{{navigation}}
-			
 			{{!-- Container del contenido --}}
 			<div class="main-content">
 
@@ -39,20 +39,19 @@
 			</div>
 
 		</div>
-		
+
 		{{!-- Css --}}
 		<link rel="stylesheet" type="text/css" href="{{asset "css/zurix.css"}}" />
 		<link rel="stylesheet" type="text/css" href="{{asset "css/magnific-popup.css"}}" />
 		{{!-- Scripts --}}
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script type="text/javascript" src="{{asset "js/pushy.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/scrollreveal.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.ghostHunter.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.magnific-popup.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.mixitup.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/script.min.js"}}"></script>
 		<script id="dsq-count-scr" src="//diegozazueta.disqus.com/count.js" async></script>
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e9d1fb23f7710d" async></script>
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e9d1fb23f7710d"></script>
 	</body>
 </html>
  

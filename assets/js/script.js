@@ -6,15 +6,21 @@ $(window).load(function(){
 }); 
 
 //script animacion del menu-----------------------------------------------
-$(document).ready(function(){
-	$('.abrir-menu').click(function(){
-		$('.abrir-menu').toggleClass('open');
-	});
+(function ($, undefined) {
+    "use strict";
 
-	$('.site-overlay').click(function(){
-		$('.abrir-menu').toggleClass('open');
-	});
-});
+    var $document = $(document);
+
+    $document.ready(function () {
+
+        $(".abrir-menu, .menu-cover").on("click", function(e){
+            e.preventDefault();
+            $("body").toggleClass("nav-opened nav-closed");
+            $('.abrir-menu').toggleClass('open');
+        });
+
+    });
+})(jQuery);
 
 // Script para el indicador del chat----------------------------------------
 $(document).ready(function () {
@@ -185,6 +191,21 @@ $(document).ready(function  () {
 	sr.reveal('.porta__galeria',{delay:500,easing:'ease-in'});
 	sr.reveal('.social__item',{delay: 700},400); 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

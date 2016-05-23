@@ -4,14 +4,15 @@
 
 <header class="header-secundario {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
 
-    <div class="post-head">
-        <time class="post-date date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        <h1 class="">{{title}}</h1>
-    </div>
 </header>
 
 <main class="content" role="main">
     <article class="post-body">
+
+        <div class="post-head">
+            <time class="post-date date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            <h2 class="">{{title}}</h2>
+        </div>
 
         <div class="addthis_sharing_toolbox"></div>
 

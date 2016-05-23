@@ -13,7 +13,7 @@
 </form>
 
 {{!-- menu estatico --}}
-<nav class="menu1 justificar medio centro mini-90 movil-85 push">
+<nav class="menu1 justificar medio centro mini-90 movil-85">
 
   {{#if @blog.logo}}<a class="menu1__icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
   
@@ -26,7 +26,7 @@
 </nav>
 
 {{!-- menu fixed --}}
-<nav class="menu-fix justificar medio push">
+<nav class="menu-fix justificar medio">
 
   {{#if @blog.logo}}<a class="menu-fix__icon-web" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
   
@@ -38,7 +38,7 @@
 </nav>
 
 {{!-- menu oculto --}}
-<nav class="menu-content col justificar pushy pushy-right">
+<nav class="menu-content col justificar">
   <ul class="menu">
     {{#if @blog.logo}}<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" class="menu__icono" /></a>{{/if}}
     <div class="papa opciones">
@@ -59,3 +59,5 @@
     <a class="subscribe-button icon-rss espacio" href="{{@blog.url}}/rss/"> Suscribir</a>
   </div>
 </nav>
+
+<span class="menu-cover"></span>
