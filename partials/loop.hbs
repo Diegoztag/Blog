@@ -1,49 +1,51 @@
-{{!-- seccion thumbnails --}}
-{{#foreach posts}}
+<div class="wrap-post distribuir centro mini-100">
     
-    {{!-- cuerpo thumbnail --}}
-    <article class="post-main">
+    {{!-- seccion thumbnails --}}
+    {{#foreach posts}}
+        
+        {{!-- cuerpo thumbnail --}}
+        <article class="papa post-main mini-100 web-50">
 
             {{!-- seccion imagen-thumb --}}
-            <div class="imagen">
+            <div class="post-box">
 
                 {{!-- imagen --}}
-                <a href="{{url}}">
-                    <div class="post-img {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-                    </div>
-                </a>
-
-                {{!-- fecha --}}
-                <time class="post-date fecha etiqueta" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-
-                {{!-- tag --}}
-                <div class="etiqueta tag">
-                    <span class="icon-tags espacio" href=""> {{tags prefix=""}}</span>
+                <div class="post-img {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
                 </div>
 
-            </div>
-            
-            {{!-- seccion descripcion-thumb --}}
-            <div class="contenido">
-
+                {{!-- seccion descripcion-thumb --}}
                 <header class="post-header"> 
-                    <a href="{{url}}">
-                        <h2 class="post-title">{{{title}}}</h2>
-                    </a>   
+                    {{!-- tag --}}
+                    <span class="tag"> {{tags prefix=""}}</span>
+                    
+                    <h2 class="post-title">
+                        <a href="{{url}}">
+                            {{{title}}}
+                        </a>
+                    </h2>
+                    
+                    {{!-- fecha --}}
+                    <time class="post-date fecha" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+
                     {{#author}}
-                        <a class="icon-usuario autor centro" href="{{url}}"> {{name}}</a>
+                        <a class="icon-usuario autor" href="{{url}}"> {{name}}</a>
                     {{/author}}
-                    <section class="post-excerpt abstract">
-                        <p>{{excerpt words="20"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+
+                    <section class="abstract">
+                        <p>{{excerpt words="25"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
                     </section>
-                    <a href="{{url}}" class="ver-mas">ver más</a>  
+
                 </header>
 
+                <a href="{{url}}" class="ver-mas">ver más</a>  
             </div>
 
-    </article>
-    
-{{/foreach}}
+        </article>
+        
+    {{/foreach}}
+
+</div>
+
 
 <div class="margen purgar mini-100">
 {{> suscribe}}
@@ -51,5 +53,4 @@
 </div>
 
 {{pagination}}
-
 

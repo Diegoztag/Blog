@@ -1,6 +1,6 @@
 {
-  "name": "blog",
-  "version": "1.1.6",
+  "name": "Blog",
+  "version": "1.1.7",
   "description": "Tema a medida para website y blog personal desarrollado para el CMS Ghost desarrollado en HTML con Handelbars, CSS y Javascript.",
   "main": "index.hbs",
   "repository": {
